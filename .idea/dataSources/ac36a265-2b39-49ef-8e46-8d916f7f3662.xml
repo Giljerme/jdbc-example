@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="kids@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.0">
+    <root id="1"/>
+    <schema id="2" parent="1" name="kids">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="database_name"/>
+    <schema id="4" parent="1" name="information_schema"/>
+    <schema id="5" parent="1" name="itaschedule"/>
+    <schema id="6" parent="1" name="kidsroom_test"/>
+    <schema id="7" parent="1" name="mysql"/>
+    <schema id="8" parent="1" name="performance_schema"/>
+    <schema id="9" parent="1" name="sakila"/>
+    <schema id="10" parent="1" name="sys"/>
+    <schema id="11" parent="1" name="world"/>
+    <table id="12" parent="2" name="bookings"/>
+    <table id="13" parent="2" name="children"/>
+    <table id="14" parent="2" name="days_off"/>
+    <table id="15" parent="2" name="events"/>
+    <table id="16" parent="2" name="hibernate_sequence"/>
+    <table id="17" parent="2" name="managers"/>
+    <table id="18" parent="2" name="persistent_logins"/>
+    <table id="19" parent="2" name="rates"/>
+    <table id="20" parent="2" name="rooms"/>
+    <table id="21" parent="2" name="rooms_off"/>
+    <table id="22" parent="2" name="tokens"/>
+    <table id="23" parent="2" name="users"/>
+    <column id="24" parent="12" name="id_book">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="25" parent="12" name="booking_end_time">
+      <Position>2</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="26" parent="12" name="booking_start_time">
+      <Position>3</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="27" parent="12" name="booking_state">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="28" parent="12" name="comment">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="29" parent="12" name="duration">
+      <Position>6</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="30" parent="12" name="id_recurrent">
+      <Position>7</Position>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+    <column id="31" parent="12" name="sum">
+      <Position>8</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="32" parent="12" name="id_child">
+      <Position>9</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="33" parent="12" name="id_room">
+      <Position>10</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="34" parent="12" name="id_user">
+      <Position>11</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="35" parent="12" name="FK1ts8vx0uioci9h77nja9aebuk">
+      <ColNames>id_room</ColNames>
+    </index>
+    <index id="36" parent="12" name="FK7n19id7tbioal42r2i75bg4fx">
+      <ColNames>id_user</ColNames>
+    </index>
+    <index id="37" parent="12" name="FKh9gfgowruydx3m7cij7amv426">
+      <ColNames>id_child</ColNames>
+    </index>
+    <key id="38" parent="12" name="PRIMARY">
+      <ColNames>id_book</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="39" parent="12" name="FKh9gfgowruydx3m7cij7amv426">
+      <ColNames>id_child</ColNames>
+      <RefSchemaName>kids</RefSchemaName>
+      <RefTableName>children</RefTableName>
+      <RefColNames>id_child</RefColNames>
+    </foreign-key>
+    <foreign-key id="40" parent="12" name="FK1ts8vx0uioci9h77nja9aebuk">
+      <ColNames>id_room</ColNames>
+      <RefSchemaName>kids</RefSchemaName>
+      <RefTableName>rooms</RefTableName>
+      <RefColNames>id_room</RefColNames>
+    </foreign-key>
+    <foreign-key id="41" parent="12" name="FK7n19id7tbioal42r2i75bg4fx">
+      <ColNames>id_user</ColNames>
+      <RefSchemaName>kids</RefSchemaName>
+      <RefTableName>users</RefTableName>
+      <RefColNames>id_user</RefColNames>
+    </foreign-key>
+    <column id="42" parent="13" name="id_child">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="43" parent="13" name="comment">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="44" parent="13" name="date_of_birth_child">
+      <Position>3</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="45" parent="13" name="first_name_child">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="46" parent="13" name="gender">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="47" parent="13" name="profile_image">
+      <Position>6</Position>
+      <DataType>longblob|0</DataType>
+    </column>
+    <column id="48" parent="13" name="enabled">
+      <Position>7</Position>
+      <DataType>tinyint(1)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;1&apos;</DefaultExpression>
+    </column>
+    <column id="49" parent="13" name="last_name_child">
+      <Position>8</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="50" parent="13" name="id_user">
+      <Position>9</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="51" parent="13" name="FKrsny42gp8tnco29st128lkqs2">
+      <ColNames>id_user</ColNames>
+    </index>
+    <key id="52" parent="13" name="PRIMARY">
+      <ColNames>id_child</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="53" parent="13" name="FKrsny42gp8tnco29st128lkqs2">
+      <ColNames>id_user</ColNames>
+      <RefSchemaName>kids</RefSchemaName>
+      <RefTableName>users</RefTableName>
+      <RefColNames>id_user</RefColNames>
+    </foreign-key>
+    <column id="54" parent="14" name="id_days_off">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="55" parent="14" name="end_date">
+      <Position>2</Position>
+      <DataType>date|0</DataType>
+    </column>
+    <column id="56" parent="14" name="name">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="57" parent="14" name="start_date">
+      <Position>4</Position>
+      <DataType>date|0</DataType>
+    </column>
+    <key id="58" parent="14" name="PRIMARY">
+      <ColNames>id_days_off</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="59" parent="15" name="id_event">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="60" parent="15" name="age_high">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="61" parent="15" name="age_low">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="62" parent="15" name="color">
+      <Position>4</Position>
+      <DataType>char(7)|0</DataType>
+      <DefaultExpression>&apos;#6AA4C1&apos;</DefaultExpression>
+    </column>
+    <column id="63" parent="15" name="description">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="64" parent="15" name="end_time">
+      <Position>6</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="65" parent="15" name="name">
+      <Position>7</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="66" parent="15" name="id_recurrent">
+      <Position>8</Position>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+    <column id="67" parent="15" name="type">
+      <Position>9</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="68" parent="15" name="start_time">
+      <Position>10</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="69" parent="15" name="room">
+      <Position>11</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="70" parent="15" name="FK7y5l9anbb4rtrcbp9ek0qyetd">
+      <ColNames>room</ColNames>
+    </index>
+    <key id="71" parent="15" name="PRIMARY">
+      <ColNames>id_event</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="72" parent="15" name="FK7y5l9anbb4rtrcbp9ek0qyetd">
+      <ColNames>room</ColNames>
+      <RefSchemaName>kids</RefSchemaName>
+      <RefTableName>rooms</RefTableName>
+      <RefColNames>id_room</RefColNames>
+    </foreign-key>
+    <column id="73" parent="16" name="next_val">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+    <column id="74" parent="17" name="room">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="75" parent="17" name="manager">
+      <Position>2</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="76" parent="17" name="FK5hbw531dnim95b8ovtgslpy5r">
+      <ColNames>room</ColNames>
+    </index>
+    <index id="77" parent="17" name="FKiuy6bctdmjwqdmbcr2tq1qn8r">
+      <ColNames>manager</ColNames>
+    </index>
+    <foreign-key id="78" parent="17" name="FK5hbw531dnim95b8ovtgslpy5r">
+      <ColNames>room</ColNames>
+      <RefSchemaName>kids</RefSchemaName>
+      <RefTableName>rooms</RefTableName>
+      <RefColNames>id_room</RefColNames>
+    </foreign-key>
+    <foreign-key id="79" parent="17" name="FKiuy6bctdmjwqdmbcr2tq1qn8r">
+      <ColNames>manager</ColNames>
+      <RefSchemaName>kids</RefSchemaName>
+      <RefTableName>users</RefTableName>
+      <RefColNames>id_user</RefColNames>
+    </foreign-key>
+    <column id="80" parent="18" name="series">
+      <Position>1</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="81" parent="18" name="last_used">
+      <Position>2</Position>
+      <DataType>date|0</DataType>
+    </column>
+    <column id="82" parent="18" name="token">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="83" parent="18" name="username">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <key id="84" parent="18" name="PRIMARY">
+      <ColNames>series</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="85" parent="19" name="id_rate">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="86" parent="19" name="hour_rate">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="87" parent="19" name="price_rate">
+      <Position>3</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="88" parent="19" name="id_room">
+      <Position>4</Position>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+    <index id="89" parent="19" name="FKb465nutg2f1haaiun2m6luba7">
+      <ColNames>id_room</ColNames>
+    </index>
+    <key id="90" parent="19" name="PRIMARY">
+      <ColNames>id_rate</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="91" parent="19" name="FKb465nutg2f1haaiun2m6luba7">
+      <ColNames>id_room</ColNames>
+      <RefSchemaName>kids</RefSchemaName>
+      <RefTableName>rooms</RefTableName>
+      <RefColNames>id_room</RefColNames>
+    </foreign-key>
+    <column id="92" parent="20" name="id_room">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="93" parent="20" name="address_room">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="94" parent="20" name="capacity_room">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="95" parent="20" name="city_room">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="96" parent="20" name="active">
+      <Position>5</Position>
+      <DataType>bit(1)|0</DataType>
+    </column>
+    <column id="97" parent="20" name="name_room">
+      <Position>6</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="98" parent="20" name="phone_room">
+      <Position>7</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="99" parent="20" name="working_end_hour">
+      <Position>8</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="100" parent="20" name="working_start_hour">
+      <Position>9</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <key id="101" parent="20" name="PRIMARY">
+      <ColNames>id_room</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="102" parent="21" name="day_off">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="103" parent="21" name="room">
+      <Position>2</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="104" parent="21" name="FKq2ej0sujwgc42knfdavcl0eri">
+      <ColNames>room</ColNames>
+    </index>
+    <key id="105" parent="21" name="PRIMARY">
+      <ColNames>day_off
+room</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="106" parent="21" name="FKjll7j90nnfuq6mgidmbt2c85o">
+      <ColNames>day_off</ColNames>
+      <RefSchemaName>kids</RefSchemaName>
+      <RefTableName>days_off</RefTableName>
+      <RefColNames>id_days_off</RefColNames>
+    </foreign-key>
+    <foreign-key id="107" parent="21" name="FKq2ej0sujwgc42knfdavcl0eri">
+      <ColNames>room</ColNames>
+      <RefSchemaName>kids</RefSchemaName>
+      <RefTableName>rooms</RefTableName>
+      <RefColNames>id_room</RefColNames>
+    </foreign-key>
+    <column id="108" parent="22" name="id_token">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="109" parent="22" name="token">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="110" parent="22" name="id_user">
+      <Position>3</Position>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+    <index id="111" parent="22" name="FKo196vgtmnk7xo75w6cv19kn3w">
+      <ColNames>id_user</ColNames>
+    </index>
+    <key id="112" parent="22" name="PRIMARY">
+      <ColNames>id_token</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="113" parent="22" name="FKo196vgtmnk7xo75w6cv19kn3w">
+      <ColNames>id_user</ColNames>
+      <RefSchemaName>kids</RefSchemaName>
+      <RefTableName>users</RefTableName>
+      <RefColNames>id_user</RefColNames>
+    </foreign-key>
+    <column id="114" parent="23" name="id_user">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="115" parent="23" name="active">
+      <Position>2</Position>
+      <DataType>bit(1)|0</DataType>
+    </column>
+    <column id="116" parent="23" name="confirmed">
+      <Position>3</Position>
+      <DataType>bit(1)|0</DataType>
+    </column>
+    <column id="117" parent="23" name="email">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="118" parent="23" name="first_name">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="119" parent="23" name="last_name">
+      <Position>6</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="120" parent="23" name="password">
+      <Position>7</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="121" parent="23" name="phone_number">
+      <Position>8</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="122" parent="23" name="role">
+      <Position>9</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="123" parent="23" name="UK_6dotkott2kjsp8vw4d0m25fb7">
+      <ColNames>email</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="124" parent="23" name="PRIMARY">
+      <ColNames>id_user</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="125" parent="23" name="UK_6dotkott2kjsp8vw4d0m25fb7">
+      <ColNames>email</ColNames>
+      <UnderlyingIndexName>UK_6dotkott2kjsp8vw4d0m25fb7</UnderlyingIndexName>
+    </key>
+  </database-model>
+</dataSource>
